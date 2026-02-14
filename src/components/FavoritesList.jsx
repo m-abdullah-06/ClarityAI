@@ -91,36 +91,43 @@ const FavoritesList = () => {
 
   return (
     <>
-      <Toaster position="top-right" />
-      <div className="w-full max-w-3xl mx-auto">
+      <Toaster
+        position="top-center" // Changed for mobile
+        toastOptions={{
+          className: "text-sm", // Smaller text on mobile
+        }}
+      />
+      <div className="w-full max-w-3xl mx-auto px-2 sm:px-0">
         <ConfirmModal
           isOpen={showModal}
           onClose={() => setShowModal(false)}
           onConfirm={handleDelete}
           message="Are you sure you want to remove this advice from favorites?"
         />
-        <h2 className="text-2xl font-bold text-gray-800 mb-6">
+        <h2 className="text-xl sm:text-2xl font-bold text-gray-800 mb-4 sm:mb-6 px-2 sm:px-0">
           Saved Advice ({favorites.length})
         </h2>
-        <div className="space-y-4">
+        <div className="space-y-3 sm:space-y-4">
           {favorites.map((favorite) => (
             <div key={favorite.id} className="card group slide-up">
-              <div className="flex items-start justify-between gap-4">
-                <div className="flex-1">
-                  <p className="text-gray-700 leading-relaxed mb-2">
+              <div className="flex items-start justify-between gap-2 sm:gap-4">
+                <div className="flex-1 min-w-0">
+                  {" "}
+                  {/* min-w-0 prevents flex overflow */}
+                  <p className="text-sm sm:text-base text-gray-700 leading-relaxed mb-2">
                     {favorite.text}
                   </p>
-                  <p className="text-sm text-gray-400">
+                  <p className="text-xs sm:text-sm text-gray-400">
                     Saved on {formatDate(favorite.timestamp)}
                   </p>
                 </div>
                 <button
                   onClick={() => openDeleteModal(favorite.id)}
-                  className="flex-shrink-0 p-2 rounded-lg text-gray-400 hover:text-red-500 hover:bg-red-50 transition-all duration-300"
+                  className="flex-shrink-0 p-1.5 sm:p-2 rounded-lg text-gray-400 hover:text-red-500 hover:bg-red-50 transition-all duration-300"
                   title="Remove from favorites"
                 >
                   <svg
-                    className="w-5 h-5"
+                    className="w-4 h-4 sm:w-5 sm:h-5"
                     fill="none"
                     stroke="currentColor"
                     viewBox="0 0 24 24"

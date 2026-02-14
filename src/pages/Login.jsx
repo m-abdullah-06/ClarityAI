@@ -24,7 +24,7 @@ const Login = () => {
       <div className="max-w-md w-full">
         <div className="text-center mb-8 fade-in">
           <h1 className="text-5xl font-bold bg-gradient-to-r from-indigo-600 to-purple-600 bg-clip-text text-transparent mb-4">
-            AI Life Advice
+            ClarityAI
           </h1>
           <p className="text-gray-600 text-lg mb-2">
             Clarity when life feels overwhelming.

@@ -32,11 +32,11 @@ const AdviceInput = ({ onAdviceReceived, onError, onLoading }) => {
   };
 
   return (
-    <div className="w-full max-w-3xl mx-auto mb-8 fade-in">
+    <div className="w-full max-w-3xl mx-auto mb-6 sm:mb-8 fade-in">
       <form onSubmit={handleSubmit} className="card">
         <label
           htmlFor="problem"
-          className="block text-gray-700 font-medium mb-3"
+          className="block text-gray-700 font-medium mb-2 sm:mb-3 text-sm sm:text-base"
         >
           What's on your mind?
         </label>
@@ -45,12 +45,17 @@ const AdviceInput = ({ onAdviceReceived, onError, onLoading }) => {
           value={problem}
           onChange={(e) => setProblem(e.target.value)}
           placeholder="Share your problem, challenge, or situation..."
-          className="input-field resize-none h-32 outline-none"
+          className="input-field resize-none h-28 sm:h-32 outline-none text-sm sm:text-base"
           maxLength={500}
         />
-        <div className="flex justify-between items-center mt-4">
-          <span className="text-sm text-gray-500">{problem.length}/500</span>
-          <button type="submit" className="btn-primary">
+        <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-2 sm:gap-0 mt-3 sm:mt-4">
+          <span className="text-xs sm:text-sm text-gray-500">
+            {problem.length}/500
+          </span>
+          <button
+            type="submit"
+            className="btn-primary w-full sm:w-auto text-sm sm:text-base"
+          >
             Get Advice
           </button>
         </div>
