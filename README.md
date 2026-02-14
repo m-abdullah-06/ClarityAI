@@ -2,8 +2,6 @@
 
 **Real advice for real life** - An AI-powered advice platform that provides thoughtful, personalized guidance for your everyday challenges.
 
-![ClarityAI Banner](https://via.placeholder.com/1200x400/6366f1/ffffff?text=ClarityAI+-+Real+Advice+for+Real+Life)
-
 ## 📖 Overview
 
 ClarityAI is a modern web application that helps users get practical, AI-generated advice for their personal and professional challenges. Whether you're facing a difficult decision, dealing with relationship issues, or navigating career choices, ClarityAI provides clear, actionable guidance tailored to your situation.
@@ -141,7 +139,7 @@ Contributions are welcome! Please feel free to submit a Pull Request.
 
 Muhammad Abdullah- [LinkedIN](www.linkedin.com/in/muhammad-abdullah-09390938a) - abdullah.muhamamd.xyz@gmail.com
 
-Project Link: [https://github.com/yourusername/clarityai](https://github.com/yourusername/clarityai)
+Project Link: [https://github.com/m-abdullah-06/ClarityAI](https://github.com/yourusername/clarityai)
 
 ---
 
