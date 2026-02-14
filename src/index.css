@@ -2,6 +2,74 @@
 @tailwind components;
 @tailwind utilities;
 
+:root {
+  --primary: #6c63ff;
+  --primary-hover: #5a52e0;
+  --primary-light: #e8e6ff;
+
+  --secondary: #a8d8ea;
+  --secondary-light: #f1faff;
+
+  --accent: #b8f2e6;
+
+  --bg-main: #fafaff;
+  --bg-card: #ffffff;
+  --bg-input: #f7f8ff;
+
+  --text-main: #2d2d3a;
+  --text-secondary: #6b6b80;
+  --text-muted: #a0a0b2;
+
+  --shadow-soft: 0px 4px 20px rgba(108, 99, 255, 0.08);
+}
+body {
+  background:
+    radial-gradient(circle at top, #e8e6ff, transparent), var(--bg-main);
+}
+.card {
+  background: var(--bg-card);
+  border-radius: 16px;
+  padding: 1.5rem;
+  box-shadow: var(--shadow-soft);
+  border: 1px solid #ececff;
+  transition: all 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-2px);
+}
+.input-field {
+  width: 100%;
+  background: var(--bg-input);
+  border: 1px solid #e6e8ff;
+  border-radius: 14px;
+  padding: 0.75rem 1rem;
+  color: var(--text-main);
+  outline: none;
+  transition: all 0.3s ease;
+  outline: none;
+}
+
+.input-field:focus {
+  border-color: var(--primary);
+  box-shadow: 0 0 0 3px var(--primary-light);
+  outline: none;
+}
+.btn-primary {
+  background: linear-gradient(135deg, #6c63ff, #8a84ff);
+  color: white;
+  padding: 0.6rem 1.5rem;
+  border-radius: 12px;
+  font-weight: 600;
+  box-shadow: 0 4px 15px rgba(108, 99, 255, 0.35);
+  transition: all 0.3s ease;
+}
+
+.btn-primary:hover {
+  transform: translateY(-1px);
+  background: linear-gradient(135deg, #5a52e0, #6c63ff);
+}
+
 @layer base {
   body {
     @apply bg-gradient-to-br from-indigo-50 via-purple-50 to-pink-50 min-h-screen;

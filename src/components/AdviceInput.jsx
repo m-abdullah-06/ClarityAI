@@ -1,19 +1,19 @@
-import { useState } from 'react';
-import { getAdvice } from '../services/api';
+import { useState } from "react";
+import { getAdvice } from "../services/api";
 
 const AdviceInput = ({ onAdviceReceived, onError, onLoading }) => {
-  const [problem, setProblem] = useState('');
+  const [problem, setProblem] = useState("");
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    
+
     if (!problem.trim()) {
-      onError('Please enter a problem or situation');
+      onError("Please enter a problem or situation");
       return;
     }
 
     if (!window.puter) {
-      onError('Puter.js is still loading. Please wait.');
+      onError("Puter.js is still loading. Please wait.");
       return;
     }
 
@@ -23,7 +23,7 @@ const AdviceInput = ({ onAdviceReceived, onError, onLoading }) => {
     try {
       const data = await getAdvice(problem);
       onAdviceReceived(data.advice);
-      setProblem('');
+      setProblem("");
     } catch (err) {
       onError(err.message);
     } finally {
@@ -34,7 +34,10 @@ const AdviceInput = ({ onAdviceReceived, onError, onLoading }) => {
   return (
     <div className="w-full max-w-3xl mx-auto mb-8 fade-in">
       <form onSubmit={handleSubmit} className="card">
-        <label htmlFor="problem" className="block text-gray-700 font-medium mb-3">
+        <label
+          htmlFor="problem"
+          className="block text-gray-700 font-medium mb-3"
+        >
           What's on your mind?
         </label>
         <textarea
@@ -42,7 +45,7 @@ const AdviceInput = ({ onAdviceReceived, onError, onLoading }) => {
           value={problem}
           onChange={(e) => setProblem(e.target.value)}
           placeholder="Share your problem, challenge, or situation..."
-          className="input-field resize-none h-32"
+          className="input-field resize-none h-32 outline-none"
           maxLength={500}
         />
         <div className="flex justify-between items-center mt-4">
